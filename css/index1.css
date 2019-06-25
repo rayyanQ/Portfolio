@@ -1,0 +1,182 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,300,600);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body{
+	padding: 0px;
+	margin: 0px;
+	font-family: Raleway;
+	background: #252627;
+	overflow-x: hidden;
+}
+
+/* Header */
+header{
+	top: 0px;
+	width: 100%;
+	background: #181818;
+	color: #24eb9c;
+	font-size: 2em;
+	font-weight: 500;
+	height: 50px;
+	position: fixed;
+	z-index: 5;
+}
+#navigation{
+	float: right;
+	margin: 0px;
+	padding:0px;
+	line-height: 40px;
+}
+#navigation a{
+	color: #666;
+	margin: 1vw;
+	font-size: 0.5em;
+}
+#navigation a:hover{
+	color: #24eb9c;
+}
+a{
+	color: #24eb9c;
+	text-decoration: none;
+}
+#logo{
+	width: 50px;
+}
+/* Header */
+
+/* Body */
+.section{
+	margin: 0px;
+	padding: 5px 0px;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+}
+#hero{
+	height: 100vh;
+}
+#title{
+	margin: auto;
+	padding: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 5em;
+	font-weight: 600;
+	max-width: 100%;
+	text-align: left;
+}
+#title img{
+	width: 500px;
+}
+#about{
+	margin: auto;
+	width: 600px;
+	min-width: 50vw;
+}
+#about div{
+	display: inline-block;
+	padding: 1em;
+	vertical-align: middle;
+}
+#me{
+	border-radius: 50%;
+	width: 10vw;
+	vertical-align: middle;
+}
+.heading{
+	width: 100%;
+	text-align: center;
+	text-decoration: underline;
+	color: #24eb9c;
+	font-size: 3em;
+}
+#projects{
+	max-width: 1440px;
+	margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+	justify-content: space-around;
+}
+.project{
+	width: 550px;
+	min-width: 40%;
+	max-width: 96%;
+	color: rgba(0,0,0,0.8);
+	margin: 5% 0 0 0;
+    display: inline-block;
+}
+.project img{
+	width: 100%;
+}
+.button{
+	border: 3px solid #777;
+	color: #777;
+	padding: 0.5em;
+	font-size: 1.5em;
+	background: rgba(0,0,0,0);
+}
+.button:hover{
+	border: 3px solid #24eb9c;
+	color: #24eb9c;
+}
+#contact_section{
+	max-width: 1440px;
+	margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+	justify-content: space-around;
+}
+.contact{
+	width: 550px;
+	min-width: 46%;
+	max-width: 96%;
+	color: #fff;
+	margin: 5% 0 0 0;
+    display: inline-block;
+    position: relative;
+}
+.contact span{
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.txt{
+    width: 80%;
+    min-height: 30%;
+    height: 4em;
+    color: #999;
+    margin-top: 1em;
+    padding-left: 1em;
+    background: #353637;
+    border: none;
+    font-family: Raleway;
+    font-weight: 300;
+}
+#message{
+	width: 80%;
+    height: 230px;
+    min-height: 50%;
+    margin-top: 1em;
+    padding-left: 1em;
+    resize: none;
+    background: #353637;
+    border: none;
+    color: #999;
+    font-family: Raleway;
+    font-weight: 300;
+}
+/* Body */
+
+@media screen and (max-width: 700px){
+	#navigation a{
+		display: none;
+	}
+}
+@media screen and (max-width: 900px){
+	#me{
+		width: 30vw;
+	}
+}
+/*#3da9dd - secondary*/

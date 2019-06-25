@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rayyan Q</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css.gz">
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="./js/jquery.js.gz" async></script>
+		<script>
+		$(document).ready(function(){
+			$("#contact_form").on("submit", function(event){
+				event.preventDefault();
+				var name = $("#name").val();
+				var email = $("#email").val();
+				var message = $("#message").val();
+				$.post('./ajax/contact.php',{name:name,email:email,message:message},function(data){
+					$("#name").val("");
+					$("#email").val("");
+					$("#message").val("");
+					$('#msg').html(data).fadeIn().delay(1000).fadeOut();
+				});
+			});
+		});
+		</script>
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header>
+			<a href="index.html.gz"><img src="img/R logo.png" id="logo"></a>
+			<span id="navigation">
+				<a href="index.html.gz" style="color: #24eb9c;">Home</a>
+				<a href="blog.html">Blog</a>
+				<a href="work.html">Work</a>
+				<a href="#contact_section">Contact</a>
+			</span>
+		</header>
+		<!-- Header -->
+
+		<!-- Body -->
+		<div id="body">
+
+			<div class="section" id="hero">
+				<h1 id="title">Hi, I am <br><img src="./img/gif3.gif"></h1>
+			</div>
+
+			<div class="section">
+				<center id="about">
+					<img src="img/me.jpg" id="me">
+					<div>
+						I am a Full Stack Developer and Designer.<br>
+						I usually work with PHP and JavaScript, in a LAMP environment.<br><br>
+						I also develop Android and PC applications using Java.<br><br>
+						Check my <a href="https://www.linkedin.com/in/rayyanquraishi/" target="_blank">LinkedIn</a> profile for more details.
+					</div>
+				</center>
+			</div><br><br><br><br>
+
+			<div class="section">
+				<h1 class="heading">Projects</h1>
+				<div id="projects">
+					<div class="project">
+						<img src="./img/hubuddies.png">
+						<div class="project_details">
+							<h2><a href="http://www.hubuddies.com/" target="_blank">Hubuddies.com</a></h2>
+							<span>
+								Hubuddies is a social network. This is a personal project that I had started in 2012.<br>
+								Most recently, I have redesigned the website and open sourced it.<br><br>
+								<a href="./work/hubuddies.html">Details</a>
+							</span>
+						</div>
+					</div>
+					<div class="project">
+						<img src="./img/fruitbytes.png">
+						<div class="project_details">
+							<h2><a href="http://www.fruitbytes.tk/" target="_blank">FruitBytes.tk</a></h2>
+							<span>
+								FruitBytes is a campaign against the use of calcium carbide in the artificial ripening of fruits.<br>
+								I had built this a long time ago, so it is loads a bit slowly.<br><br>
+								<a href="./work/fruitbytes.html">Details</a>
+							</span>
+						</div>
+					</div>
+					<div class="project">
+						<img src="./img/7billion.png">
+						<div class="project_details">
+							<h2><a href="http://www.7billionstories.tk/" target="_blank">7BillionStories.tk</a></h2>
+							<span>
+								7 billion stories was built to share the stories of the common people.<br><br>
+								<a href="./work/7billionstories.html">Details</a>
+							</span>
+						</div>
+					</div>
+					<div class="project">
+						<img src="./img/tncakes.png">
+						<div class="project_details">
+							<h2><a href="http://www.tncakes.tk/" target="_blank">TNCakes.tk</a></h2>
+							<span>
+								TN Cakes is an online store for a bakery.<br>
+								This website is not complete, I am waiting to receive the photos of the products.<br><br>
+								<a href="./work/tncakes.html">Details</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<br><br><br>
+				<a class="button" href="work.html">More</a>
+			</div><br><br><br><br>
+
+			<div class="section">
+				<h1 class="heading">Contact me</h1>
+				<div id="contact_section">
+					<div class="contact">
+						<span>
+							Want a website built or just want to say 'hi'?<br><br>
+							Whatever it is, feel free to contact me using this form.
+						</span>
+					</div>
+					<div class="contact">
+						<form method="post" id="contact_form">
+							<input type="text" name="name" class="txt" placeholder="Name" required="required" id="name"><br>
+							<input type="email" name="email" class="txt" placeholder="Email" required="required" id="email"><br>
+							<textarea id="message" placeholder="Message" required="required"></textarea><br><br>
+							<input type="submit" name="submit" class="button">
+						</form>
+						<span id="msg"></span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- Body -->
+
+		<footer>
+		</footer>
+	</body>
+</html>
