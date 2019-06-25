@@ -1,0 +1,46 @@
+body{
+	padding: 0px;
+	margin: 0px;
+	font-family: consolas;
+}
+a{
+	text-decoration: none;
+	color: #555;
+}
+header{
+	height: 10%;
+	width: 96%;
+	background: #fff;
+	color: #555;
+	font-size: 2em;
+	padding: 2%;
+}
+#sub_items{
+	float: right;
+	font-size: .5em;
+	width: 50%;
+	text-align: right;
+}
+#sub_items a{
+	padding-left: 5%;
+}
+#body{
+	width: 100%;
+	height: 100%;
+}
+#bg{
+	width: 96%;
+	height: 500px;
+	margin: 0% 2%;
+	background: url('../img/rayyan.jpg');
+	background-size: cover;
+	color: #fff;
+}
+#info{
+	float: right;
+	margin: 15% 2%;
+	width: 40%;
+}
+a[title="Free server"]{
+	display:none;
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+	<head>
+		<title>RayyanAQ</title>
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="shortcut icon" href="img/R.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="rayyan, ahmed, quraishi, rayyanaq.com, rayyan.com, rayyanaq, rayyana.com, rayyanq.com, rayyanahmedquraishi, rayyan ahmed quraishi, web developer, web developers, mobile development, web design, website maker">
+		<meta name="description" content="Hi!<br>My name is Rayyan Ahmed Quraishi, I am a 17 year old self taught programmer/web developer.<br>">
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#contact_form").on("submit", function(event){
+					event.preventDefault();
+					var name = $("#name").val();
+					var email = $("#email").val();
+					var msg = $("#message").val();
+					$.post('mail.php',{name:name,email:email,msg:msg},function(data){
+						$("#name").val("");
+						$("#email").val("");
+						$("#message").val("");
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html">RayyanAQ</a>
+			<p id="sub_items">
+				<a href="#about">About</a>
+				<a href="#white">Work</a>
+				<a href="#contact">Contact</a>
+			</p>
+		</header>
+		<div id="body">
+			<div id="work_area">
+				<p class="work_img"><img src="img/hubuddies.png"></p>
+				<p class="work_img"><img src="img/fruitbytes.png"></p>
+				<p class="work_img"><img src="img/sabahasif.png"></p>
+				<p class="work_img"><img src="img/7billion.png"></p>
+			</div>
+			<div class="grey" id="about"><img src="img/me.jpg" id="me"><br><br><br>Hi! My name is Rayyan Ahmed Quraishi, I am a 17 year old self taught programmer/web developer.</div>
+			<div id="white">
+				<center>
+					<div class="project">
+						<a href="http://www.hubuddies.com"><img src="img/hubuddies.png"></a>
+						<span class="txt">
+							<h4><a href="http://www.hubuddies.com" target="_blank">Hubuddies.com</a></h4>
+							Hubuddies is a social network for finding new people, and reconnecting with old ones.
+						</span>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="project">
+						<a href="http://www.fruitbytes.tk"><img src="img/fruitbytes.png"></a>
+						<span class="txt">
+							<h4><a href="http://www.fruitbytes.tk" target="_blank">Fruitbytes.tk</a></h4>
+							Fruitbytes, is a campaign against the use of calcium carbide in the artificial ripening of fruits.
+						</span>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="project">
+						<a href="http://www.sabahasif.com"><img src="img/sabahasif.png"></a>
+						<span class="txt">
+							<h4><a href="http://www.sabahasif.com" target="_blank">Sabahasif.com</a></h4>
+							A mordern portfolio site.
+						</span>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="project">
+						<a href="http://www.7billionstories.co"><img src="img/7billion.png"></a>
+						<span class="txt">
+							<h4><a href="http://www.7billionstories.co" target="_blank">7Billionstories.co</a></h4>
+							Stories of the common people.
+						</span>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+				</center>
+			</div>
+			<div class="grey">
+				<center id="contact">
+					<br>
+					<h2>Contact</h2>
+					<form method="post" id="contact_form">
+						<input type="text" name="name" class="txt" placeholder="Name" required="required" id="name"><br>
+						<input type="email" name="email" class="txt" placeholder="Email" required="required" id="email"><br>
+						<textarea id="message" placeholder="Message" required="required"></textarea><br>
+						<input type="submit" name="submit">
+					</form>
+				</center>
+			</div>
+			<br>
+		</div>
+	</body>
+</html>
