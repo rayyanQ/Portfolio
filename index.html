@@ -5,178 +5,219 @@
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="shortcut icon" href="img/favicon.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="./js/jquery.js.gz"></script>
+		<script>
+			$(document).ready(function(){
+
+				var height = document.documentElement.clientHeight;
+				window.onscroll = function() {
+					if (document.body.scrollTop > height || document.documentElement.scrollTop > height) {
+						document.getElementsByTagName("header")[0].style.top = "0";
+					} else {
+						document.getElementsByTagName("header")[0].style.top = "-50px";
+					}
+				};
+
+				$("#contact-form").on("submit", function(event){
+					event.preventDefault();
+					var name = $("#name").val();
+					var email = $("#email").val();
+					var msg = $("#msg").val();
+					$.post('./ajax/contact.php',{name:name,email:email,msg:msg},function(data){
+						$("#name").val("");
+						$("#email").val("");
+						$("#msg").val("");
+						$('#contact-info h1').html(data).fadeIn();
+					});
+				});
+
+			});
+		</script>
 	</head>
 	<body>
 		<header>
-			<h1 id="name">Rayyan Quraishi</h1>
-			<h4 id="description">Full Stack Developer, with a passion for creating.</h4>
-			<div id="links">
-				<a href="http://rayyanq.com/resume.pdf"><img class="link-icon" src="img/resume.png"></a>
-				<a href="https://github.com/rayyanQ"><img class="link-icon" src="img/github.png"></a>
-				<a href="https://github.com/rayyanQ"><div id="logo">RQ</div></a>
-				<a href="https://linkedin.com/in/rayyanquraishi/"><img class="link-icon" src="img/linkedin.png"></a>
-				<a href="#contact"><img class="link-icon" src="img/contact.png"></a>
-			</div>
+			<a href="http://rayyanq.com"><img id="logo" src="img/logo.png"></a>
 		</header>
 		<div id="body">
-			<div id="timeline">
-				<div class="container left">
-					<div class="content">
-						<img class="content-img" src="img/uwenactus.png">
-						<h2>UW Enactus</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-							<p class="technology">PHP</p>
-						</div>
-					</div>
-				</div>
-				<div class="container right">
-					<div class="content">
-						<img class="content-img" src="img/greened.png">
-						<h2>GreenEd</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-							<p class="technology">PHP</p>
-							<p class="technology">MYSQL</p>
-						</div>
-					</div>
-				</div>
-				<div class="container left">
-					<div class="content">
-						<img class="content-img" src="img/thesolarlabs.png">
-						<h2>The Solar Labs</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-							<p class="technology">PHP</p>
-							<p class="technology">MYSQL</p>
-						</div>
-					</div>
-				</div>
-				<div class="container right">
-					<div class="content">
-						<img class="content-img" src="img/portfolio2.png">
-						<h2>Portfolio v2.0</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-							<p class="technology">PHP</p>
-						</div>
-					</div>
-				</div>
-				<div class="container left">
-					<div class="content">
-						<img class="content-img" src="img/tncakes.png">
-						<h2>TN Cakes</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-							<p class="technology">PHP</p>
-							<p class="technology">MYSQL</p>
-						</div>
-					</div>
-				</div>
-				<div class="container right">
-					<div class="content">
-						<img class="content-img" src="img/7billion.png">
-						<h2>7 Billion Stories</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-						</div>
-					</div>
-				</div>
-				<div class="container left">
-					<div class="content">
-						<img class="content-img" src="img/fruitbytes.png">
-						<h2>Fruit Bytes</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-							<p class="technology">EasleJS</p>
-						</div>
-					</div>
-				</div>
-				<div class="container right">
-					<div class="content">
-						<img class="content-img" src="img/hubuddies.png">
-						<h2>Hubuddies</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-							<p class="technology">PHP</p>
-							<p class="technology">MYSQL</p>
-						</div>
-					</div>
-				</div>
-				<div class="container left">
-					<div class="content">
-						<img class="content-img" src="img/portfolio1.png">
-						<h2>Portfolio v1.0</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-							<p class="technology">PHP</p>
-						</div>
-					</div>
-				</div>
-				<div class="container right">
-					<div class="content">
-						<img class="content-img" src="img/sabahasif.png">
-						<h2>Sabah Asif</h2>
-						<div class="technologies">
-							<p class="technology">HTML</p>
-							<p class="technology">CSS</p>
-							<p class="technology">JavaScript</p>
-							<p class="technology">jQuery</p>
-							<p class="technology">PHP</p>
-						</div>
-					</div>
+			
+			<!-- Hero -->
+			<div id="hero">
+				<h1 id="hero-title">Rayyan Quraishi</h1>
+				<p id="hero-description">Software developer, with a passion for learning.</p>
+				<div id="hero-links">
+					<a href="http://rayyanq.com/resume.pdf" target="_blank"><img class="link-icons" src="img/resume.png"></a>
+					<a href="https://github.com/rayyanQ" target="_blank"><img class="link-icons" src="img/github.png"></a>
+					<a href="https://linkedin.com/in/rayyanquraishi/" target="_blank"><img class="link-icons" src="img/linkedin.png"></a>
+					<a href="#contact"><img class="link-icons" src="img/contact.png"></a>
 				</div>
 			</div>
-			<div id="contact">
-			</div>
-		</div>
+			<!-- Hero -->
 
-		<!-- Scripts -->
-		<script type="text/javascript">
-			var header = document.getElementsByTagName("header")[0];
-			window.onscroll = function() {
-				if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-					document.getElementById("description").style.display = "none";
-					document.getElementById("name").style.display = "none";
-					document.getElementById("logo").style.display = "inline";
-					header.style.background = "#fff";
-					header.style.boxShadow = "0 0 10px 0 rgba(0,0,0,.4)";
-				} else {
-					document.getElementById("description").style.display = "block";
-					document.getElementById("name").style.display = "block";
-					document.getElementById("logo").style.display = "none";
-					header.style.background = "#efefef";
-					header.style.boxShadow = "none";
-				}
-			};
-		</script>
-		<!-- Scripts -->
+			<!-- Projects -->
+			<div id="projects">
+				<div class="project">
+					<img class="project-img" src="img/uwenactus.png">
+					<h2 class="project-name"><a href="https://uwenactus.ca" target="_blank">UW Enactus</a></h2>
+					<div class="project-tags">
+						<p class="tag">HTML</p>
+						<p class="tag">CSS</p>
+						<p class="tag">JavaScript</p>
+						<p class="tag">jQuery</p>
+						<p class="tag">PHP</p>
+						<p class="tag">Ajax</p>
+					</div>
+					<div class="project-info">
+						<a>Source not available</a>
+						<a>Details</a>
+					</div>
+				</div>
+				<div class="project">
+					<img class="project-img" src="img/greened.png">
+					<h2 class="project-name"><a href="http://greened.ga" target="_blank">GreenEd</a></h2>
+					<div class="project-tags">
+						<p class="tag">HTML</p>
+						<p class="tag">CSS</p>
+						<p class="tag">JavaScript</p>
+						<p class="tag">jQuery</p>
+						<p class="tag">PHP</p>
+						<p class="tag">MySQL</p>
+						<p class="tag">Ajax</p>
+					</div>
+					<div class="project-info">
+						<a href="https://github.com/GreenEducation/School/tree/Alpha" target="_blank">View Source</a>
+						<a>Details</a>
+					</div>
+				</div>
+				<div class="project">
+					<img class="project-img" src="img/thesolarlabs.png">
+					<h2 class="project-name"><a href="http://thesolarlabs.com" target="_blank">The Solar Labs</a></h2>
+					<div class="project-tags">
+						<p class="tag">HTML</p>
+						<p class="tag">CSS</p>
+						<p class="tag">JavaScript</p>
+						<p class="tag">jQuery</p>
+						<p class="tag">PHP</p>
+						<p class="tag">MySQL</p>
+						<p class="tag">Ajax</p>
+					</div>
+					<div class="project-info">
+						<a>Source not available</a>
+						<a>Details</a>
+					</div>
+				</div>
+				<div class="project">
+					<img class="project-img" src="img/portfolio2.png">
+					<h2 class="project-name"><a href="http://rayyanq.com/v2/index.html.gz" target="_blank">Portfolio v2.0</a></h2>
+					<div class="project-tags">
+						<p class="tag">HTML</p>
+						<p class="tag">CSS</p>
+						<p class="tag">JavaScript</p>
+						<p class="tag">jQuery</p>
+						<p class="tag">PHP</p>
+						<p class="tag">Ajax</p>
+					</div>
+					<div class="project-info">
+						<a href="https://github.com/rayyanQ/Portfolio/tree/v2.0" target="_blank">View Source</a>
+						<a>Details</a>
+					</div>
+				</div>
+				<div class="project">
+					<img class="project-img" src="img/tncakes.png">
+					<h2 class="project-name"><a href="http://tncakes.tk" target="_blank">TN Cakes</a></h2>
+					<div class="project-tags">
+						<p class="tag">HTML</p>
+						<p class="tag">CSS</p>
+						<p class="tag">JavaScript</p>
+						<p class="tag">jQuery</p>
+						<p class="tag">PHP</p>
+						<p class="tag">MySQL</p>
+						<p class="tag">Ajax</p>
+					</div>
+					<div class="project-info">
+						<a href="https://github.com/rayyanQ/TNCakes" target="_blank">View Source</a>
+						<a>Details</a>
+					</div>
+				</div>
+				<div class="project">
+					<img class="project-img" src="img/7billion.png">
+					<h2 class="project-name"><a href="http://rayyanq.com/old/7billion/index.html" target="_blank">7 Billion Stories</a></h2>
+					<div class="project-tags">
+						<p class="tag">HTML</p>
+						<p class="tag">CSS</p>
+						<p class="tag">JavaScript</p>
+						<p class="tag">jQuery</p>
+					</div>
+					<div class="project-info">
+						<a href="https://github.com/rayyanQ/7-Billion-Stories" target="_blank">View Source</a>
+						<a>Details</a>
+					</div>
+				</div>
+				<div class="project">
+					<img class="project-img" src="img/fruitbytes.png">
+					<h2 class="project-name"><a href="http://rayyanq.com/old/fruitbytes/index.html" target="_blank">Fruit Bytes</a></h2>
+					<div class="project-tags">
+						<p class="tag">HTML</p>
+						<p class="tag">CSS</p>
+						<p class="tag">JavaScript</p>
+						<p class="tag">jQuery</p>
+						<p class="tag">EasleJS</p>
+					</div>
+					<div class="project-info">
+						<a href="https://github.com/rayyanQ/FruitBytes" target="_blank">View Source</a>
+						<a>Details</a>
+					</div>
+				</div>
+				<div class="project">
+					<img class="project-img" src="img/hubuddies.png">
+					<h2 class="project-name"><a href="http://hubuddies.com" target="_blank">Hubuddies</a></h2>
+					<div class="project-tags">
+						<p class="tag">HTML</p>
+						<p class="tag">CSS</p>
+						<p class="tag">JavaScript</p>
+						<p class="tag">jQuery</p>
+						<p class="tag">PHP</p>
+						<p class="tag">MYSQL</p>
+						<p class="tag">Ajax</p>
+					</div>
+					<div class="project-info">
+						<a href="https://github.com/rayyanQ/hubuddies" target="_blank">View Source</a>
+						<a>Details</a>
+					</div>
+				</div>
+				<div class="project">
+					<img class="project-img" src="img/sabahasif.png">
+					<h2 class="project-name"><a href="https://sabahasif.com" target="_blank">Client Portfolio</a></h2>
+					<div class="project-tags">
+						<p class="tag">HTML</p>
+						<p class="tag">CSS</p>
+						<p class="tag">JavaScript</p>
+						<p class="tag">jQuery</p>
+						<p class="tag">PHP</p>
+						<p class="tag">Ajax</p>
+					</div>
+					<div class="project-info">
+						<a>Available on request</a>
+						<a>Details</a>
+					</div>
+				</div>
+			</div>
+			<!-- Projects -->
+
+			<!-- Contact -->
+			<div id="contact">
+				<div id="contact-info">
+					<h1>Contact Me</h1>
+					<p>Feel free to drop a message using this form, or email me at <i>quraishi@rayyanq.com</i></p>
+				</div>
+				<form id="contact-form" method="post">
+					<input id="name" class="text" type="text" name="Name" placeholder="Name" required>
+					<input id="email" class="text" type="email" name="Email" placeholder="Email" required>
+					<textarea id="msg" class="text" placeholder="Message"></textarea>
+					<input id="submit" type="submit" name="submit" value="Submit">
+				</form>
+			</div>
+			<!-- Contact -->
+
+		</div>
 	</body>
 </html>
